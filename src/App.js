@@ -1,12 +1,12 @@
 
-import './App.css';
+import './App.css'; 
 import Boton from './componentes/Boton';
-import freecodeCampLogo from './imagenes/FreeCodeCamp_logo.svg.png'
-
+import freecodeCampLogo from './imagenes/FreeCodeCamp_logo.svg.png';
+import Contador from './componentes/Contador';
 
 function App() {
 
-  const manejarClic = () => {
+  const handleClick = () => {
     console.log("Clic");
   }
 
@@ -24,14 +24,15 @@ function App() {
         />
       </div>
       <div className='contenedor-principal'>
+        <Contador numClicks='5' />
         <Boton
           texto='Clic'
-          esBotonDeClic={true}
-          manejarClic={manejarClic} />
+          esBotonDeClick={true}
+          handleClick={handleClick} />
         <Boton 
           texto='Reiniciar'
-          esBotonDeClic={false}
-          manejarClic={reiniciarContador} />
+          esBotonDeClick={false}
+          handleClick={reiniciarContador} />
       </div>
     </div>
   );
