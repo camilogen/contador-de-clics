@@ -3,15 +3,18 @@ import './App.css';
 import Boton from './componentes/Boton';
 import freecodeCampLogo from './imagenes/FreeCodeCamp_logo.svg.png';
 import Contador from './componentes/Contador';
+import { useState } from 'react';
 
 function App() {
 
+  const [numClicks, setNumClicks] = useState(0);
+
   const handleClick = () => {
-    console.log("Clic");
+    setNumClicks(numClicks + 1);
   }
 
   const reiniciarContador = () => {
-    console.log('Reiniciar')
+    setNumClicks(0);
   }
 
   return (
@@ -24,7 +27,7 @@ function App() {
         />
       </div>
       <div className='contenedor-principal'>
-        <Contador numClicks='5' />
+        <Contador numClicks={numClicks} />
         <Boton
           texto='Clic'
           esBotonDeClick={true}
